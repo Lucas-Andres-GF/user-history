@@ -1,15 +1,13 @@
 <script lang="ts">
-  
   let scenaries = [
     {
       title: 'Test 1',
       context: 'Test context for the test',
       situation: 'Test situation for test the test',
-      response: 'Test response for the test'
-    }
+      response: 'Test response for the test',
+    },
   ];
 </script>
-
 
 <div class="container">
   <div class="card">
@@ -18,19 +16,29 @@
       <form action="">
         <div class="field">
           <label for="title">Escenario {i + 1}:</label>
-          <input type="text" name="title" id="" bind:value={scenarie.title}>
+          <input type="text" name="title" id="" bind:value={scenarie.title} />
         </div>
         <div class="field">
           <label for="context">Dado</label>
-          <input type="text" name="context" id="" bind:value={scenarie.context}>
+          <input
+            type="text"
+            name="context"
+            id=""
+            bind:value={scenarie.context}
+          />
         </div>
         <div class="field">
           <label for="situation">Cuando</label>
-          <input type="text" name="" id="" bind:value={scenarie.situation}>
+          <input type="text" name="" id="" bind:value={scenarie.situation} />
         </div>
         <div class="field">
           <label for="response">Entonces</label>
-          <input type="text" name="response" id="" bind:value={scenarie.response}>
+          <input
+            type="text"
+            name="response"
+            id=""
+            bind:value={scenarie.response}
+          />
         </div>
       </form>
     {:else}

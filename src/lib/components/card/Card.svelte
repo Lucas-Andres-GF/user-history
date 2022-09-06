@@ -1,22 +1,22 @@
 <script lang="ts">
-  import CardBack from "./CardBack.svelte";
-  import CardFront from "./CardFront.svelte";
+  import CardBack from './CardBack.svelte';
+  import CardFront from './CardFront.svelte';
 
-  let side : 'front' | 'back' = 'front';
+  let side: 'front' | 'back' = 'front';
 
   const toggleSide = () => {
-    side = side == 'back'? 'front': 'back';
-  }
+    side = side == 'back' ? 'front' : 'back';
+  };
 </script>
 
 <div>
-  {#if side=='front'}
+  {#if side == 'front'}
     <CardFront />
   {:else}
     <CardBack />
   {/if}
-  
-  <button on:click={toggleSide}>Cambiar lado</button>  
+
+  <button on:click={toggleSide}>Cambiar lado</button>
 </div>
 
 <style>

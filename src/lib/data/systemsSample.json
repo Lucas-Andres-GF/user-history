@@ -1,0 +1,127 @@
+[
+  {
+    "id": "prueba_1",
+    "title": "Prueba 1",
+    "description": "Descripcion",
+    "histories": [
+      {
+        "slug": "test_2",
+        "id": "Test 1",
+        "title": "Test context for the test",
+        "rules": [
+          "Test situation for test the test - 1",
+          "Test situation for test the test - 2",
+          "Test situation for test the test - 3"
+        ],
+        "scenaries": [
+          {
+            "title": "Test 1",
+            "context": "Test context for the test",
+            "situation": "Test situation for test the test",
+            "response": "Test response for the test"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prueba_2",
+    "title": "Prueba 2",
+    "description": "Descripcion",
+    "histories": [
+      {
+        "slug": "test_2",
+        "id": "Test 2",
+        "title": "Test context for the test",
+        "rules": [
+          "Test situation for test the test - 1",
+          "Test situation for test the test - 2",
+          "Test situation for test the test - 3"
+        ],
+        "scenaries": [
+          {
+            "title": "Test 1",
+            "context": "Test context for the test",
+            "situation": "Test situation for test the test",
+            "response": "Test response for the test"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prueba_3",
+    "title": "Prueba 3",
+    "description": "Descripcion",
+    "histories": [
+      {
+        "slug": "test_2",
+        "id": "Test 2",
+        "title": "Test context for the test",
+        "rules": [
+          "Test situation for test the test - 1",
+          "Test situation for test the test - 2",
+          "Test situation for test the test - 3"
+        ],
+        "scenaries": [
+          {
+            "title": "Test 1",
+            "context": "Test context for the test",
+            "situation": "Test situation for test the test",
+            "response": "Test response for the test"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prueba_4",
+    "title": "Prueba 4",
+    "description": "Descripcion",
+    "histories": [
+      {
+        "slug": "test_2",
+        "id": "Test 2",
+        "title": "Test context for the test",
+        "rules": [
+          "Test situation for test the test - 1",
+          "Test situation for test the test - 2",
+          "Test situation for test the test - 3"
+        ],
+        "scenaries": [
+          {
+            "title": "Test 1",
+            "context": "Test context for the test",
+            "situation": "Test situation for test the test",
+            "response": "Test response for the test"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "prueba_5",
+    "title": "Prueba 5",
+    "description": "Descripcion",
+    "histories": [
+      {
+        "slug": "test_2",
+        "id": "Test 2",
+        "title": "Test context for the test",
+        "rules": [
+          "Test situation for test the test - 1",
+          "Test situation for test the test - 2",
+          "Test situation for test the test - 3"
+        ],
+        "scenaries": [
+          {
+            "title": "Test 1",
+            "context": "Test context for the test",
+            "situation": "Test situation for test the test",
+            "response": "Test response for the test"
+          }
+        ]
+      }
+    ]
+  }
+]

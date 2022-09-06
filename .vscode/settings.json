@@ -1,6 +1,12 @@
 {
-    "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": false,
-    "editor.tabSize" : 2,
-    "editor.formatOnSave": true
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "files.insertFinalNewline": true,
+  "workbench.activityBar.visible": false,
+  "workbench.statusBar.visible": false,
+  "html.completion.attributeDefaultValue": "singlequotes",
+  "svelte.plugin.svelte.format.config.singleQuote": true,
+  "svelte.plugin.svelte.defaultScriptLanguage": "ts",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single"
 }

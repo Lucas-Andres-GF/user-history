@@ -1,11 +1,11 @@
 <script lang="ts">
   let data = {
-    id: "Test 1",
-    title: "Test context for the test",
+    id: 'Test 1',
+    title: 'Test context for the test',
     rules: [
-      "Test situation for test the test - 1",
-      "Test situation for test the test - 2",
-      "Test situation for test the test - 3",
+      'Test situation for test the test - 1',
+      'Test situation for test the test - 2',
+      'Test situation for test the test - 3',
     ],
   };
 </script>
@@ -26,12 +26,7 @@
       {#each data.rules as rule, i}
         <div class="field">
           <label for="rule-{i}">Regla {i + 1}:</label>
-          <input
-            type="text"
-            name="rule-{i}"
-            id=""
-            bind:value={rule}
-          />
+          <input type="text" name="rule-{i}" id="" bind:value={rule} />
         </div>
       {:else}
         <p>Ningun escenario añadido</p>
