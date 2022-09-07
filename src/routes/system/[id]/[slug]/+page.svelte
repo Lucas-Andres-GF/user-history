@@ -2,4 +2,6 @@
   import Card from '$components/card/Card.svelte';
 </script>
 
-<Card />
+<article>
+  <Card />
+</article>

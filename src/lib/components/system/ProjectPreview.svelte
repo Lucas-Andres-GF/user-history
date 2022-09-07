@@ -8,6 +8,10 @@
   let isHovered = false;
 
   const dispatch = createEventDispatcher<{ remove: { id: string } }>();
+  
+  // const removeSystem = (e: CustomEvent<{ id: string }>) => {
+  //   systems = systems.filter((system) => system.id !== e.detail.id);
+  // };
 </script>
 
 <div
@@ -17,10 +21,8 @@
   {#if isHovered}
     <button on:click={() => dispatch('remove', { id })}>X</button>
   {/if}
-  <a href="/system/{id}">
-    <h1>{title}</h1>
-    <p>{description}</p>
-  </a>
+  <h1>{title}</h1>
+  <p>{description}</p>
 </div>
 
 <style>

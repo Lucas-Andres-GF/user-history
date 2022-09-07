@@ -1,5 +1,5 @@
 <script lang="ts">
-  import ProjectPreview from '$components/system/ProjectPreview.svelte';
+  import StickyNote from '$components/StickyNote.svelte';
   import { mapSystems } from '$lib/api';
   import type { System } from '$lib/types';
 
@@ -16,10 +16,6 @@
       description: system.description,
     };
   });
-
-  const removeSystem = (e: CustomEvent<{ id: string }>) => {
-    systems = systems.filter((system) => system.id !== e.detail.id);
-  };
 </script>
 
 <svelte:head>
@@ -28,11 +24,11 @@
 
 <article>
   <div>
-    <h1>Historias de Usuario</h1>
-    <div>
+    <h1>Sistemas Elicitados</h1>
+    <div style:padding-block="2rem">
       <div class="systems-container">
-        {#each systems as system (system.id)}
-          <ProjectPreview {...system} on:remove={removeSystem} />
+        {#each systems as { id, title, description } (id)}
+          <StickyNote link={'/system/' + id} {title} {description} />
         {:else}
           <h2 class="fallback">
             No se agrego ningun sistema,<br />
@@ -40,7 +36,7 @@
           </h2>
         {/each}
       </div>
-      <button>Crear</button>
+      <button>Añadir Sistema</button>
     </div>
   </div>
 </article>
@@ -67,9 +63,10 @@
     background-color: inherit;
   }
   .systems-container {
+    position: relative;
     display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(232px, 1fr));
     justify-items: center;
     max-width: 80vw;
     margin-top: 1rem;
