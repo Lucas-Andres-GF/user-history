@@ -20,7 +20,7 @@
       </li>
       <li>
         <PracticePreview
-          link="/unknown"
+          link="/undefined"
           title="3 - Place holder"
           description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda sequi, nemo ipsum impedit, error ipsam adipisci non voluptatibus necessitatibus quidem velit perferendis! Et placeat, aperiam quasi harum tempora asperiores iste."
         />

@@ -1,5 +1,6 @@
 <script lang="ts">
   import StickyNote from '$components/StickyNote.svelte';
+import WhiteBoard from '$components/WhiteBoard.svelte';
   import { mapSystems } from '$lib/api';
   import type { System } from '$lib/types';
 
@@ -16,6 +17,16 @@
       description: system.description,
     };
   });
+
+  let notesColors = [
+    `hsl(${Math.random() * 360} 85% 78%)`,
+    `hsl(${Math.random() * 360} 85% 78%)`,
+    `hsl(${Math.random() * 360} 85% 78%)`,
+    `hsl(${Math.random() * 360} 85% 78%)`,
+    `hsl(${Math.random() * 360} 85% 78%)`,
+    `hsl(${Math.random() * 360} 85% 78%)`,
+    `hsl(${Math.random() * 360} 85% 78%)`
+  ]
 </script>
 
 <svelte:head>
@@ -35,6 +46,7 @@
             comienze agregando uno
           </h2>
         {/each}
+          <WhiteBoard link={'/system/prueba_1'} title={"Coca Cola"} {notesColors}/>
       </div>
       <button>Añadir Sistema</button>
     </div>
