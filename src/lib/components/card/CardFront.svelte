@@ -50,7 +50,6 @@
     width: fit-content;
     padding: 2rem;
     border-radius: 1rem;
-    background-color: hsl(45 50% 50%);
   }
 
   form {

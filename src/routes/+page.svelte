@@ -1,5 +1,5 @@
 <script lang="ts">
-  import PracticePreview from '$components/PracticePreview.svelte';
+  import PracticePreview from '$cmps/PracticePreview.svelte';
 </script>
 
 <svelte:head>
@@ -13,7 +13,7 @@
     <ul>
       <li>
         <PracticePreview
-          link="/system"
+          link="/sistemas"
           title="2 - Historias de Usuario"
           description="Una historia de usuario es una descripción corta y simple de un requerimiento de un sistema, que se escribe en lenguaje común del usuario y desde su perspectiva."
         />
