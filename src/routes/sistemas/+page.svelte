@@ -1,18 +1,31 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
   import { goto } from '$app/navigation';
-  import { pageMetada } from '$lib/stores/pageData';
-  import type { CompactSystem } from '$lib/types';
-
+  import { pageMetada } from '$stores/pageData';
+  import { addSystem, loadSystems, systems } from '$stores/systemsStore';
+  import { user } from '$stores/sessionStore';
+  
   import StickyNoteContainer from '$cmps/stickynote/StickyNoteContainer.svelte';
   import WhiteBoardContainer from '$cmps/whiteboard/WhiteBoardContainer.svelte';
-
-  export let data: { systems: CompactSystem[] };
-
+  
   $pageMetada.title = 'Sistemas Elicitados';
 
+  const formData = {
+    name: '',
+    description: ''
+  }
+
   const newSystem = () => {
-    alert('Not implemented');
+    if (!$user) return;
+    addSystem(formData.name, formData.description, $user.id);
+    showFormulary = false;
   };
+
+  let showFormulary = false;
+
+  onMount(() => {
+    if ($systems.length === 0) loadSystems();
+  })
 </script>
 
 <svelte:head>
@@ -21,16 +34,17 @@
 
 <article>
   <section>
-    {#each data.systems as { id, title, histories } (id)}
-      <WhiteBoardContainer onClick={() => goto(`/sistemas/${id}`)}>
+    {#each $systems as { id, name, stories, slug } (id)}
+      {@const systemUrl = `/sistemas/${slug}`}
+      <WhiteBoardContainer onClick={() => goto(systemUrl)}>
         <div class="system">
-          <h2>{title}</h2>
+          <h2>{name}</h2>
           <div class="system-histories">
-            {#each histories as { color, slug }}
-              <StickyNoteContainer {color} link={`/sistemas/${id}/${slug}`} />
+            {#each stories as {color, slug }}
+              <StickyNoteContainer {color} link={`${systemUrl}/${slug}`} />
             {/each}
           </div>
-          {#if histories.length === 0}
+          {#if stories.length === 0}
             <p>Ninguna historia a sido agregada</p>
           {/if}
         </div>
@@ -38,14 +52,24 @@
     {/each}
 
     <div class="new-system">
-      {#if data.systems.length === 0}
+      {#if $systems.length === 0}
         <h2>No se agrego ningun sistema, comienze agregando uno</h2>
       {/if}
-      <button on:click={newSystem}>
+      <button on:click={() => showFormulary = true}>
         <img src="/add-icon.svg" alt="Simbolo de agregar" />
       </button>
     </div>
   </section>
+  {#if showFormulary}
+    <form on:submit|preventDefault={newSystem}>
+      <label for="name">id</label>
+      <input type="text" required name="name" bind:value={formData.name}/>
+      <label for="description">description</label>
+      <input type="text" name="description" bind:value={formData.description}/>
+      <button type="submit">Crear</button>
+      <button on:click={() => showFormulary = false}>Cerrar</button>
+    </form>
+  {/if}
 </article>
 
 <style>

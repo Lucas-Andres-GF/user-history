@@ -1,8 +1,6 @@
 <script lang="ts">
-  import type { HSLColor } from '$lib/types';
-
   export let link: string = '';
-  export let color: HSLColor;
+  export let color: string;
   export let rotate = true;
 </script>
 

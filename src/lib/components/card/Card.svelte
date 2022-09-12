@@ -1,9 +1,11 @@
 <script lang="ts">
+  import type { Storie } from '$lib/types/types';
+
   import CardBack from './CardBack.svelte';
   import CardFront from './CardFront.svelte';
 
   let side: 'front' | 'back' = 'front';
-
+  export let storie: Storie;
   const toggleSide = () => {
     side = side == 'back' ? 'front' : 'back';
   };
@@ -11,9 +13,9 @@
 
 <div>
   {#if side == 'front'}
-    <CardFront />
+    <CardFront {storie} />
   {:else}
-    <CardBack />
+    <CardBack {storie} />
   {/if}
 
   <button on:click={toggleSide}>Cambiar lado</button>

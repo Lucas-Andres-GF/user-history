@@ -10,7 +10,8 @@ const config = {
 	kit: {
 		adapter: adapter(),
     alias: {
-      '$cmps': 'src/lib/components'
+      '$cmps': 'src/lib/components',
+      '$stores': 'src/lib/stores'
     }
 	}
 };

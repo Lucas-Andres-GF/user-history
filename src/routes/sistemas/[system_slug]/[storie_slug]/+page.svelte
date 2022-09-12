@@ -1,44 +1,27 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
-  import type { Historie, HSLColor } from '$lib/types';
-  import { pageMetada } from '$lib/stores/pageData';
+  import { pageMetada } from '$stores/pageData';
   import StickyNoteContainer from '$cmps/stickynote/StickyNoteContainer.svelte';
   import Card from '$cmps/card/Card.svelte';
+import type { Storie } from '$lib/types/types';
+import { page } from '$app/stores';
+import { system } from '$stores/systemsStore';
 
-  // export let data:Historie;
+  export let data:Storie;
 
-  const data = {
-    slug: 'test_1',
-    id: 'Test 1',
-    title: 'Test context for the test',
-    color: 'hsl(133 85% 78%)' as HSLColor,
-    rules: [
-      'Test situation for test the test - 1',
-      'Test situation for test the test - 2',
-      'Test situation for test the test - 3',
-    ],
-    scenaries: [
-      {
-        title: 'Test 1',
-        context: 'Test context for the test',
-        situation: 'Test situation for test the test',
-        response: 'Test response for the test',
-      },
-    ],
-  };
-  $pageMetada.title = `Historia: ${data.id}`;
+  $pageMetada.title = `Historia: ${data.id_custom}`;
   const newSystem = () => {
     alert('Not implemented');
   };
 </script>
 
 <svelte:head>
-  <title>{data.id}</title>
+  <title>{$system?$system.name:'Error'}</title>
 </svelte:head>
 
 <article>
   <StickyNoteContainer color={data.color} rotate={false}>
-    <Card />
+    <Card storie={data}/>
   </StickyNoteContainer>
   <section />
 </article>
